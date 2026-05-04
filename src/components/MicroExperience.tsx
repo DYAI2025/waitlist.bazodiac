@@ -46,7 +46,7 @@ export default function MicroExperience() {
                 <Sparkles className="w-12 h-12" />
             </div>
             
-            <h2 className="font-serif text-3xl mb-6 text-gold-leaf italic">Decode Your Micro-Signal</h2>
+            <h2 className="font-serif text-3xl mb-6 text-gold-leaf">Decode Your Micro-Signal</h2>
             <p className="text-white/60 mb-8 text-sm leading-relaxed">
               Before you join the inner circle, witness the engine's precision. 
               Input your origin points to reveal your dominant elemental resonance.
@@ -144,7 +144,7 @@ export default function MicroExperience() {
             </div>
             
             <div className="mt-4 mb-2 uppercase tracking-[0.3em] text-[10px] text-gold/60 font-mono">Dominant Resonance</div>
-            <h1 className={`text-6xl font-serif mb-4 ${result.color} italic transition-all duration-1000`}>
+            <h1 className={`text-6xl font-serif mb-4 ${result.color} transition-all duration-1000`}>
               {result.name}
             </h1>
             <p className="text-white/60 mb-8 max-w-xs mx-auto text-sm">

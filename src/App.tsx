@@ -35,8 +35,8 @@ export default function App() {
       <nav className="fixed top-0 left-0 right-0 z-40 p-6 md:px-12 pointer-events-none">
         <div className="max-w-7xl mx-auto flex justify-between items-center bg-obsidian/40 backdrop-blur-md border border-white/5 p-4 rounded-2xl pointer-events-auto shadow-2xl">
           <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="w-8 h-8 rounded-lg bg-gold flex items-center justify-center font-serif font-bold text-obsidian italic">B</div>
-            <span className="text-xl font-serif italic tracking-tight text-white group-hover:text-gold transition-colors">Bazodiac</span>
+            <div className="w-8 h-8 rounded-lg bg-gold flex items-center justify-center font-serif font-bold text-obsidian">B</div>
+            <span className="text-xl font-serif tracking-tight text-white group-hover:text-gold transition-colors">Bazodiac</span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 text-[10px] uppercase tracking-[0.3em] font-bold text-white/60">
@@ -75,7 +75,7 @@ export default function App() {
               <span className="text-[10px] font-mono tracking-[0.5em] uppercase text-gold">Bazodiac — Your Signal. Decoded.</span>
             </div>
             
-            <h1 className="text-5xl md:text-8xl font-serif leading-[0.9] tracking-tighter italic text-white/95 text-balance">
+            <h1 className="text-5xl md:text-8xl font-serif leading-[0.9] tracking-tighter text-white/95 text-balance">
               Three symbolic systems.<br />One calculated <span className="text-gold text-glow-gold">timing signature</span>.
             </h1>
             
@@ -127,7 +127,7 @@ export default function App() {
         <div className="py-32" id="micro-experience">
           <div className="text-center mb-16 space-y-4 px-6">
               <h2 className="text-sm font-mono uppercase tracking-[0.4em] text-gold/60">Interaktive Vorschau</h2>
-              <h3 className="text-4xl md:text-5xl font-serif italic">Erlebe deine erste Signatur.</h3>
+              <h3 className="text-4xl md:text-5xl font-serif">Erlebe deine erste Signatur.</h3>
           </div>
           <MicroExperience />
         </div>
@@ -139,9 +139,9 @@ export default function App() {
       <footer className="py-16 px-6 border-t border-white/5 relative z-10 bg-obsidian">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center font-serif text-gold italic text-xl border border-white/5">B</div>
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center font-serif text-gold text-xl border border-white/5">B</div>
                 <div className="flex flex-col">
-                  <span className="font-serif italic tracking-tight text-white text-lg">Bazodiac</span>
+                  <span className="font-serif tracking-tight text-white text-lg">Bazodiac</span>
                   <span className="text-[10px] text-white/30 uppercase tracking-[0.2em] font-mono">The Timing Engine</span>
                 </div>
             </div>
@@ -208,7 +208,7 @@ export default function App() {
                   transition={{ delay: i * 0.1 }}
                   href={`#${item === 'Engine' ? 'engine-section' : item.toLowerCase()}`} 
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-5xl font-serif italic text-white/90 hover:text-gold transition-colors"
+                  className="text-5xl font-serif text-white/90 hover:text-gold transition-colors"
                 >
                   {item}
                 </motion.a>

@@ -51,7 +51,7 @@ export default function BentoGrid() {
     <section className="py-32 px-6 max-w-7xl mx-auto" id="engine-section">
       <div className="mb-16 space-y-4">
           <h2 className="text-sm font-mono uppercase tracking-[0.4em] text-gold/60">The Visible Engine Strategy</h2>
-          <h3 className="text-4xl md:text-5xl font-serif italic max-w-2xl">Calculated resonance. Decoded for the intellectual seeker.</h3>
+          <h3 className="text-4xl md:text-5xl font-serif max-w-2xl">Calculated resonance. Decoded for the intellectual seeker.</h3>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-3 gap-4 h-full md:h-[600px]">
@@ -71,7 +71,7 @@ export default function BentoGrid() {
             <f.icon className="w-6 h-6 text-gold mb-8 mb-auto" />
             
             <div className="space-y-3">
-              <h4 className="text-xl font-serif text-gold-leaf italic">{f.title}</h4>
+              <h4 className="text-xl font-serif text-gold-leaf">{f.title}</h4>
               <p className="text-xs text-white/40 leading-relaxed font-light">{f.desc}</p>
             </div>
           </motion.div>
