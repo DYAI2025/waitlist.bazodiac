@@ -50,14 +50,14 @@ export default function WaitlistSection() {
             <motion.form 
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-50px" }}
                 variants={{
                   hidden: { opacity: 0 },
                   visible: {
                     opacity: 1,
                     transition: {
-                      staggerChildren: 0.15,
-                      delayChildren: 0.2
+                      staggerChildren: 0.1,
+                      delayChildren: 0.1
                     }
                   }
                 }}
@@ -66,7 +66,7 @@ export default function WaitlistSection() {
             >
                 <motion.input 
                     variants={{
-                      hidden: { opacity: 0, y: 20 },
+                      hidden: { opacity: 0, y: 15 },
                       visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
                     }}
                     required
@@ -78,8 +78,8 @@ export default function WaitlistSection() {
                 />
                 <motion.button 
                     variants={{
-                      hidden: { opacity: 0, y: 20 },
-                      visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                      hidden: { opacity: 0, y: 15 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 1.0, ease: [0.16, 1, 0.3, 1] } }
                     }}
                     whileHover={{ scale: 1.05, backgroundColor: "rgba(241, 210, 121, 1)" }}
                     whileTap={{ scale: 0.95 }}
