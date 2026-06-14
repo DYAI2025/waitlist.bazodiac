@@ -17,6 +17,7 @@ export default function WaitlistSection() {
   const [email, setEmail] = useState('');
   const [isJoined, setIsJoined] = useState(false);
   const [position, setPosition] = useState(0);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const saved = localStorage.getItem('bazodiac_waitlist');
@@ -29,6 +30,12 @@ export default function WaitlistSection() {
 
   const handleJoin = (e: React.FormEvent) => {
     e.preventDefault();
+    const emailRegex = /\S+@\S+\.\S+/;
+    if (!emailRegex.test(email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+    setError('');
     const newPos = Math.floor(Math.random() * 200) + 1200;
     setPosition(newPos);
     setIsJoined(true);
@@ -64,18 +71,32 @@ export default function WaitlistSection() {
                 onSubmit={handleJoin} 
                 className="flex flex-col md:flex-row gap-2 max-w-md mx-auto"
             >
-                <motion.input 
-                    variants={{
-                      hidden: { opacity: 0, y: 15 },
-                      visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
-                    }}
-                    required
-                    type="email" 
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="flex-1 bg-white/5 border border-white/10 rounded-xl py-4 px-6 focus:outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/20 focus:shadow-[0_0_25px_rgba(212,175,55,0.15)] transition-all text-sm placeholder:text-white/20 focus:placeholder:text-gold/40"
-                />
+                <div className="flex-1 w-full relative">
+                    <motion.input 
+                        variants={{
+                          hidden: { opacity: 0, y: 15 },
+                          visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                        }}
+                        required
+                        type="email" 
+                        value={email}
+                        onChange={e => {
+                          setEmail(e.target.value);
+                          if (error) setError('');
+                        }}
+                        placeholder="Enter your email"
+                        className={`w-full bg-white/5 border ${error ? 'border-gold' : 'border-white/10'} rounded-xl py-4 px-6 focus:outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/20 focus:shadow-[0_0_25px_rgba(212,175,55,0.15)] transition-all text-sm placeholder:text-white/20 focus:placeholder:text-gold/40`}
+                    />
+                    {error && (
+                      <motion.p 
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="text-gold text-[10px] mt-2 absolute -bottom-5 left-2"
+                      >
+                        {error}
+                      </motion.p>
+                    )}
+                </div>
                 <motion.button 
                     variants={{
                       hidden: { opacity: 0, y: 15 },
