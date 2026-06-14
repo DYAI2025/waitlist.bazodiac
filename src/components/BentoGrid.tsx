@@ -46,6 +46,20 @@ const FEATURES = [
   }
 ];
 
+const gridVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 export default function BentoGrid() {
   return (
     <section className="py-32 px-6 max-w-7xl mx-auto" id="engine-section">
@@ -54,14 +68,17 @@ export default function BentoGrid() {
           <h3 className="text-4xl md:text-5xl font-serif max-w-2xl">Calculated resonance. Decoded for the intellectual seeker.</h3>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-3 gap-4 h-full md:h-[600px]">
+      <motion.div 
+        variants={gridVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="grid grid-cols-1 md:grid-cols-4 grid-rows-3 gap-4 h-full md:h-[600px]"
+      >
         {FEATURES.map((f, i) => (
           <motion.div 
             key={i}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
+            variants={cardVariants}
             className={`glass p-8 rounded-[2.5rem] flex flex-col justify-between group hover:border-gold/20 transition-all duration-500 overflow-hidden relative ${f.size} ${f.bg}`}
           >
             <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
@@ -76,7 +93,7 @@ export default function BentoGrid() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

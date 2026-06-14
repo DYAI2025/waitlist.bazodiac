@@ -4,6 +4,7 @@ import CelestialHero from './components/CelestialHero';
 import MicroExperience from './components/MicroExperience';
 import WaitlistSection from './components/WaitlistSection';
 import BentoGrid from './components/BentoGrid';
+import CursorTrail from './components/CursorTrail';
 import { ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react';
 
 import { useMotionValueEvent } from 'motion/react';
@@ -25,6 +26,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen font-sans selection:bg-gold/30 scroll-smooth overflow-x-hidden">
+      <CursorTrail />
       {/* Progress Bar */}
       <motion.div 
         className="fixed top-0 left-0 right-0 h-1 bg-gold z-50 origin-[0%]"
